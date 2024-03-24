@@ -1,0 +1,39 @@
+.exercice {
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.exercice__content {
+    display: flex;
+    gap: 4px;
+}
+
+.exercice__image {
+    width: 50%;
+    object-fit: contain;
+}
+
+.exercice__info {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exercice__rest {
+    color: var(--accent);
+}
+
+.exercice__notes {
+    flex:1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.exercice__note-text {
+    margin-top: 4px;
+}

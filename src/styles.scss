@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    /*__COLORS__*/
+    --black: #24293E;
+    --secondary: #2F3855;
+    --white: #F4F5FC;
+    --blue: #8EBBFF;
+
+    --accent: var(--blue);
+
+    /*__SIZES__*/
+    --header-height: 50px;
+    --footer-height: 40px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: system-ui, sans-serif;
+    background: var(--black);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.main {
+    height: calc(100dvh - (var(--header-height) + var(--footer-height)));
+    color: var(--white);
+    padding: 12px;
+}
+
+/*__TEXT__*/
+.title-1 {
+    font-size: 32px;
+}
+.title-2 {
+    font-size: 24px;
+}
+.title-3 {
+    font-size: 18px;
+}

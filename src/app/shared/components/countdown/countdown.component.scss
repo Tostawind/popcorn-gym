@@ -1,0 +1,29 @@
+.countdown {
+    visibility: hidden;
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .countdown--visible {
+    visibility: visible;
+  }
+
+  .footer {
+        position: fixed;
+        bottom: calc(var(--footer-height) * -1);
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--white);
+        color: var(--black);
+        height: var(--footer-height);
+        padding: 0 12px;
+        overflow: hidden;
+        transition: all 400ms ease;
+    }
+
+    .footer--visible {
+        bottom: 0;
+    }

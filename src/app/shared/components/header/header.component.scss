@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    height: var(--header-height);
+    padding: 0 12px;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.header__title {
+    opacity: 0.8;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    
+}
+
+.header__icon {
+    height: 35px;
+    animation: rotate 3s linear reverse infinite;
+}
+
+@keyframes rotate {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
