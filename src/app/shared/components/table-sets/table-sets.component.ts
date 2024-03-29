@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import Exercice from '../../../core/models/exercice.interface';
+import { CountdownService } from '../../../core/services/countdown.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-table-sets',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './table-sets.component.html',
   styleUrl: './table-sets.component.scss'
 })
 export class TableSetsComponent {
+  countdownService = inject(CountdownService);
   exercices: Exercice[] = [
     {
         set: 1,
@@ -32,4 +35,13 @@ export class TableSetsComponent {
         rest: "0.2"
     }
   ]
+
+  onChecked(event: Event, exercice: Exercice) {
+    const { checked } = event.target as HTMLInputElement;
+    if (checked) {
+      this.countdownService.startCountdown(exercice.rest);
+    } else {
+      this.countdownService.stopCountdown();
+    }
+  }
 }

@@ -1,0 +1,5 @@
+.main {
+    height: calc(100dvh - (var(--header-height) + var(--footer-height)));
+    color: var(--white);
+    padding: 12px;
+}

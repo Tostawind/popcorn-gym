@@ -17,7 +17,7 @@
                         <button style="padding: 4px 10px;">{{exercice.weight}}</button>
                     </td>
                     <td class="table__cell">
-                        <input type="checkbox" style="height: 20px; width: 20px" checked={{exercice.checked}} /> 
+                        <input type="checkbox" style="height: 20px; width: 20px" (change)="onChecked($event,exercice)" /> 
                     </td>
                 </tr>
             }

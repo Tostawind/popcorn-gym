@@ -13,4 +13,9 @@
     padding: 0 12px;
     overflow: hidden;
     transition: all 400ms ease;
+
+    &__countdown {
+        font-weight: 700;
+        font-size: 24px;
+    }
 }
