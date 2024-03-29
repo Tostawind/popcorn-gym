@@ -1,8 +1,19 @@
-<h2 class="title-1">Tirón 🫲</h2>
-<app-pagination />
+<h2 class="title-1" style="margin-bottom: 20px;">Tirón 🫲</h2>
 
 <!-- CAROUSEL -->
-<div class="carousel">
-    <app-exercice-card />
-    <!-- <app-table-sets /> -->
-</div>
+<swiper-container init="false">
+    <swiper-slide>
+        <div style="height: 50px;"></div>
+        <app-exercice-card />
+        <app-table-sets />
+    </swiper-slide>
+    <swiper-slide>
+        <div style="height: 50px;"></div>
+        <app-exercice-card />
+        <app-table-sets />
+    </swiper-slide>
+    <swiper-slide>
+        <div style="height: 50px;"></div>
+        Slide 3
+    </swiper-slide>
+</swiper-container>
