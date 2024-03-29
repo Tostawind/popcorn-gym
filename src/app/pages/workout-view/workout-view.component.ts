@@ -3,6 +3,7 @@ import { PaginationComponent } from '../../shared/components/pagination/paginati
 import { ExerciceCardComponent } from '../../shared/components/exercice-card/exercice-card.component';
 import { TableSetsComponent } from '../../shared/components/table-sets/table-sets.component';
 import { CountdownComponent } from '../../shared/components/countdown/countdown.component';
+import { routine } from '../../data/workouts';
 
 @Component({
   selector: 'app-workout-view',
@@ -13,4 +14,5 @@ import { CountdownComponent } from '../../shared/components/countdown/countdown.
 })
 export class WorkoutViewComponent {
 
+  routine = routine;
 }

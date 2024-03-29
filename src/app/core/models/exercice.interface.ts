@@ -1,7 +1,17 @@
 export default interface Exercice     {
-    set: number;
+    id: string;
+    position: number;
+    name: string;
+    sets: number;
     reps: number;
-    weight: number;
-    checked: boolean;
     rest: string;
+    weights: Weight[];
+    notes?: string;
+    image: string;
+}
+
+interface Weight {
+    kg: number;
+    equipment: string;
+    notes: string;
 }

@@ -9,15 +9,15 @@
             </tr>
         </thead>
         <tbody>
-            @for (exercice of exercices; track $index) {
+            @for (set of sets; track $index) {
                 <tr>
-                    <td class="table__cell">{{exercice.set}}</td>
-                    <td class="table__cell">{{exercice.reps}}</td>
+                    <td class="table__cell">{{ $index + 1}}</td>
+                    <td class="table__cell">{{ currentExercice.reps}}</td>
                     <td class="table__cell">
-                        <button style="padding: 4px 10px;">{{exercice.weight}}</button>
+                        <button style="padding: 4px 10px;">{{ currentExercice.weights[0].kg }}</button>
                     </td>
                     <td class="table__cell">
-                        <input type="checkbox" style="height: 20px; width: 20px" (change)="onChecked($event,exercice)" /> 
+                        <input type="checkbox" style="height: 20px; width: 20px" (change)="onChecked($event)" /> 
                     </td>
                 </tr>
             }
