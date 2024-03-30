@@ -2,7 +2,7 @@ import Routine from '../core/models/routine.interface';
 
 export const routine: Routine = {
     id: crypto.randomUUID(),
-    name: 'Tirón 🫲',
+    name: 'Tirón',
     exercises: [
         {
             id: crypto.randomUUID(),

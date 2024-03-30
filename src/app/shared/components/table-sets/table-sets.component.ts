@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import Exercice from '../../../core/models/exercice.interface';
 import { CountdownService } from '../../../core/services/countdown.service';
 import { AsyncPipe } from '@angular/common';
@@ -12,39 +12,18 @@ import { RoutinesService } from '../../../core/services/routines.service';
   styleUrl: './table-sets.component.scss'
 })
 export class TableSetsComponent {
+  @Input() exercice!: Exercice;
   countdownService = inject(CountdownService);
-  routinesService = inject(RoutinesService);
-  exercices = this.routinesService.getExercices();
-  currentExercice = this.exercices[0];
-  sets = new Array(this.exercices[0].sets);
-  
-  constructor() {
+  sets: number[] = [];
+
+  ngOnInit(): void {
+    if (this.exercice)  {
+      this.sets = new Array(this.exercice.sets).fill(0);
+    }
+    
     
   }
 
-  // exercices: Exercice[] = [
-  //   {
-  //       set: 1,
-  //       reps: 10,
-  //       weight: 10,
-  //       checked: true,
-  //       rest: "2"
-  //   },
-  //   {
-  //       set: 2,
-  //       reps: 10,
-  //       weight: 20,
-  //       checked: false,
-  //       rest: "1"
-  //   },
-  //   {
-  //       set: 3,
-  //       reps: 10,
-  //       weight: 30,
-  //       checked: false,
-  //       rest: "0.2"
-  //   }
-  // ]
 
   onChecked(event: Event) {
     // const { checked } = event.target as HTMLInputElement;

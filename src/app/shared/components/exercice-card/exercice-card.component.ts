@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { RoutinesService } from '../../../core/services/routines.service';
+import Exercice from '../../../core/models/exercice.interface';
 
 @Component({
   selector: 'app-exercice-card',
@@ -9,7 +10,6 @@ import { RoutinesService } from '../../../core/services/routines.service';
   styleUrl: './exercice-card.component.scss'
 })
 export class ExerciceCardComponent {
-  routinesService = inject(RoutinesService);
+  @Input() exercice!: Exercice;
 
-  exercices = this.routinesService.getExercices();
 }

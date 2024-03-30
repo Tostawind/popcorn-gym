@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 import { ExerciceCardComponent } from '../../shared/components/exercice-card/exercice-card.component';
 import { TableSetsComponent } from '../../shared/components/table-sets/table-sets.component';
 import { CountdownComponent } from '../../shared/components/countdown/countdown.component';
-import { routine } from '../../data/workouts';
 
 import { register } from 'swiper/element/bundle';
+import { RoutinesService } from '../../core/services/routines.service';
 register();
 
 @Component({
@@ -17,21 +17,16 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WorkoutViewComponent implements AfterViewInit {
-
-  routine = routine;
+  routinesService = inject(RoutinesService);
+  routineName = this.routinesService.getRoutine().name;
+  exercices = this.routinesService.getExercices();
 
   ngAfterViewInit() {
-    // slides-per-view="1"
-    // speed="500"
-    // css-mode="true"
-    // pagination="true"
-    // space-between="40"
-    // effect="creative"
     const swiperEl = document.querySelector('swiper-container');
 
     const swiperParams = {
       slidesPerView: 1,
-      speed: 500,
+      speed: 1000,
       cssMode: true,
       spaceBetween: 40,
       injectStyles: [`
@@ -63,7 +58,7 @@ export class WorkoutViewComponent implements AfterViewInit {
         height: 30px;
         text-align: center;
         font-weight: bold;
-        line-height: 28px;
+        line-height: 29px;
         font-size: 16px;
         color: var(--white);
         opacity: 1;

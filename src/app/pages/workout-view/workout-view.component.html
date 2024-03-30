@@ -1,19 +1,12 @@
-<h2 class="title-1" style="margin-bottom: 20px;">Tirón 🫲</h2>
+<h2 class="title-1" style="margin-bottom: 20px;">{{ routineName }}</h2>
 
 <!-- CAROUSEL -->
 <swiper-container init="false">
-    <swiper-slide>
-        <div style="height: 50px;"></div>
-        <app-exercice-card />
-        <app-table-sets />
-    </swiper-slide>
-    <swiper-slide>
-        <div style="height: 50px;"></div>
-        <app-exercice-card />
-        <app-table-sets />
-    </swiper-slide>
-    <swiper-slide>
-        <div style="height: 50px;"></div>
-        Slide 3
-    </swiper-slide>
+    @for (exercice of exercices; track $index) {
+        <swiper-slide>
+            <div style="height: 50px;"></div>
+            <app-exercice-card [exercice]="exercice"/>
+            <app-table-sets [exercice]="exercice"/>
+        </swiper-slide>
+    }
 </swiper-container>
