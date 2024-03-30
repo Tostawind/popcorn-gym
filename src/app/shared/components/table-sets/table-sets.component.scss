@@ -28,10 +28,26 @@
         }
     }
 
-    &__row:nth-of-type(even) {
-        .table__cell {
-            background-color: var(--black);
+
+    &__row {
+        &:nth-of-type(even) {
+            .table__cell {
+                background-color: var(--black);
+            }
         }
+
+        &--checked {
+            .table__cell {
+                background-color: var(--green);
+                opacity: 0.4;
+            }
+            &:nth-of-type(even) {
+                .table__cell {
+                    background-color: var(--green);
+                }
+            }
+        }
+
     }
 
     &__btn {
