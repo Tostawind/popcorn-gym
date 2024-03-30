@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
-import { ExerciceCardComponent } from '../../shared/components/exercice-card/exercice-card.component';
-import { TableSetsComponent } from '../../shared/components/table-sets/table-sets.component';
-import { CountdownComponent } from '../../shared/components/countdown/countdown.component';
+import { PaginationComponent } from '@shared/components/pagination/pagination.component';
+import { ExerciceCardComponent } from '@shared/components/exercice-card/exercice-card.component';
+import { TableSetsComponent } from '@shared/components/table-sets/table-sets.component';
+import { CountdownComponent } from '@shared/components/countdown/countdown.component';
 
+import { RoutinesService } from '@core/services/routines.service';
 import { register } from 'swiper/element/bundle';
-import { RoutinesService } from '../../core/services/routines.service';
 register();
 
 @Component({

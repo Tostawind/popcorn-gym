@@ -6,19 +6,19 @@
                     <th class="table__header">Set</th>
                     <th class="table__header">Reps</th>
                     <th class="table__header">Peso</th>
-                    <th class="table__header">✅</th>
+                    <th class="table__header"></th>
                 </tr>
             </thead>
             <tbody>
                 @for (set of sets; track $index) {
-                    <tr>
-                        <td class="table__cell">{{ $index + 1}}</td>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--first">{{ $index + 1}}</td>
                         <td class="table__cell">{{ exercice.reps}}</td>
                         <td class="table__cell">
-                            <button style="padding: 4px 10px;">{{ exercice.weights[0].kg }}</button>
+                            <button class="table__btn">{{ exercice.weights[0].kg }} <span style="font-size: 12px">kg</span></button>
                         </td>
-                        <td class="table__cell">
-                            <input type="checkbox" style="height: 20px; width: 20px" (change)="onChecked($event)" /> 
+                        <td class="table__cell table__cell--last">
+                            <input type="checkbox" class="table__checkbox" (change)="onChecked($event)" /> 
                         </td>
                     </tr>
                 }

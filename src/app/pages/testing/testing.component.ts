@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { TestingService } from '../../core/services/testing.service';
+import { TestingService } from '@core/services/testing.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 

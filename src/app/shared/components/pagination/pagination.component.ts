@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { RoutinesService }  from '../../../core/services/routines.service';
 import { CommonModule } from '@angular/common';
+import { RoutinesService }  from '@core/services/routines.service';
 
 @Component({
   selector: 'app-pagination',

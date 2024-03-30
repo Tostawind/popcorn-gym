@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CountdownService } from '../../../core/services/countdown.service';
+import { CountdownService } from '@core/services/countdown.service';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

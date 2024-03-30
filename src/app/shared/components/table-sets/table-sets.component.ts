@@ -1,8 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
-import Exercice from '../../../core/models/exercice.interface';
-import { CountdownService } from '../../../core/services/countdown.service';
+import Exercice from '@core/models/exercice.interface';
+import { CountdownService } from '@core/services/countdown.service';
 import { AsyncPipe } from '@angular/common';
-import { RoutinesService } from '../../../core/services/routines.service';
 
 @Component({
   selector: 'app-table-sets',
@@ -20,8 +19,6 @@ export class TableSetsComponent {
     if (this.exercice)  {
       this.sets = new Array(this.exercice.sets).fill(0);
     }
-    
-    
   }
 
 

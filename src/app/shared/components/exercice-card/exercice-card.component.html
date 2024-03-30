@@ -4,7 +4,10 @@
         <div class="exercice__content">
             <img class="exercice__image" [src]="exercice.image" alt="Random image">
             <div class="exercice__info">
-                <p class="exercice__rest"><b>Rest:</b> {{ exercice.rest }}min</p>
+                <p class="exercice__rest">
+                    <b>Rest: </b>
+                    <span style="color: var(--white);">{{ exercice.rest }}min</span>
+                </p>
                 <div class="exercice__notes">
                     <h5 class="title-3" style="opacity: 0.6;">Notas</h5>
                     <p class="exercice__note-text">{{ exercice.notes }}</p>
