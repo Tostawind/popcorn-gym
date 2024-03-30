@@ -57,7 +57,7 @@ export const routine: Routine = {
                     notes: 'Por lado'
                 }
             ],
-            notes: '',
+            notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, voluptatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, voluptatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, voluptatibus?',
             image: 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Shrug_4f8a4e15-96b9-4595-8e88-635bf83cc8ac_600x600.png?v=1612138751'
         },
         

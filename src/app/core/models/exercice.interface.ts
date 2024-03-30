@@ -10,7 +10,7 @@ export default interface Exercice     {
     image: string;
 }
 
-interface Weight {
+export interface Weight {
     kg: number;
     equipment: string;
     notes: string;

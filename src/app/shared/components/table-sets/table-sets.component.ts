@@ -1,7 +1,8 @@
 import { Component, Input, inject } from '@angular/core';
-import Exercice from '@core/models/exercice.interface';
+import Exercice, { Weight } from '@core/models/exercice.interface';
 import { CountdownService } from '@core/services/countdown.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-table-sets',
@@ -13,11 +14,11 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 export class TableSetsComponent {
   @Input() exercice!: Exercice;
   countdownService = inject(CountdownService);
+  modalService = inject(ModalService);
   sets: boolean[] = [];
 
   ngOnInit(): void {
     if (this.exercice)  {
-      // this.sets = new Array(this.exercice.sets).fill(0);
       this.sets = new Array(this.exercice.sets).fill(false);
     }
   }
@@ -32,5 +33,9 @@ export class TableSetsComponent {
       this.sets[index] = false;
       // this.countdownService.stopCountdown();
     }
+  }
+
+  openWeightsModal(weights: Weight[]) {
+    this.modalService.openModal(weights);
   }
 }
