@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--white);
     color: var(--black);
@@ -14,12 +14,37 @@
     overflow: hidden;
     transition: all 400ms ease;
 
-    &--active {
-        bottom: 0;
-    }
+    &--active { bottom: 0; }
 
     &__countdown {
+        flex: 1;
         font-weight: 700;
         font-size: 24px;
+        text-align: center;
+    }
+
+    &__controller {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 35%;
+
+        .footer__btn-add, .footer__btn-subtract {
+            background-color: var(--secondary);
+            border: 2px solid var(--secondary);
+            color: var(--accent);
+            padding: 4px 8px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        
+        .footer__btn-stop {
+            background-color: var(--accent);
+            border: 2px solid var(--accent);
+            color: var(--secondary);
+            padding: 4px 8px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
     }
 }

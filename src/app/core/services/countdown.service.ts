@@ -45,4 +45,19 @@ export class CountdownService {
     }
     this.countdownInProgress = false;
   }
+
+  addTime(seconds: number) {
+    if (!this.countdownInProgress) {
+      return; // No hay ninguna cuenta regresiva en progreso para agregar tiempo
+    }
+    this.remainingTime += seconds;
+    console.log(this.remainingTime)
+  }
+
+  subtractTime(seconds: number) {
+    if (!this.countdownInProgress) {
+      return; // No hay ninguna cuenta regresiva en progreso para quitar tiempo
+    }
+    this.remainingTime = Math.max(0, this.remainingTime - seconds);
+  }
 }

@@ -1,3 +1,10 @@
 <footer class="footer" [ngClass]="{'footer--active': countdown != ''}">
+    <div class="footer__controller">
+        <button class="footer__btn-subtract" (click)="subtractTime()">-10</button>
+        <button class="footer__btn-add" (click)="addTime()">+10</button>
+    </div>
     <div class="footer__countdown">{{ countdown }}</div>
+    <div class="footer__controller">
+        <button class="footer__btn-stop" (click)="stopCountdown()">Skip</button>
+    </div>
 </footer>

@@ -19,4 +19,16 @@ export class FooterComponent {
       this.countdown = value;
     })
   }
+
+  addTime() {
+    this.countdownService.addTime(10);
+  }
+
+  subtractTime() {
+    this.countdownService.subtractTime(10);
+  }
+
+  stopCountdown() {
+    this.countdownService.stopCountdown();
+  }
 }
