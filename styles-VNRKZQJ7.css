@@ -1,1 +1,0 @@
-:root{--black: #24293E;--secondary: #2F3855;--white: #F4F5FC;--blue: #8EBBFF;--green: #00C48C;--accent: var(--blue);--header-height: 50px;--footer-height: 50px}*{margin:0;padding:0;box-sizing:border-box}html{font-family:system-ui,sans-serif;background:var(--black)}body{overflow-x:hidden}.title-1{font-size:28px;opacity:.6}.title-2{font-size:24px}.title-3{font-size:18px}
