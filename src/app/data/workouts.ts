@@ -49,7 +49,7 @@ export const routine: Routine = {
             name: 'Remo máquina placas',
             sets: 3,
             reps: 12,
-            rest: '2',
+            rest: '0.1',
             weights: [
                 {
                     kg: 30,

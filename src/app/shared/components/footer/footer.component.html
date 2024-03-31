@@ -1,3 +1,3 @@
-<footer class="footer" >
-    <div class="footer__countdown">{{countdownValue$ | async}}</div>
+<footer class="footer" [ngClass]="{'footer--active': countdown != ''}">
+    <div class="footer__countdown">{{ countdown }}</div>
 </footer>

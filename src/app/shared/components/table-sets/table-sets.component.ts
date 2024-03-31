@@ -28,10 +28,10 @@ export class TableSetsComponent {
     const { checked } = event.target as HTMLInputElement;
     if (checked) {
       this.sets[index] = true;
-      // this.countdownService.startCountdown(exercice.rest);
+      this.countdownService.startCountdown(this.exercice.rest);
     } else {
       this.sets[index] = false;
-      // this.countdownService.stopCountdown();
+      this.countdownService.stopCountdown();
     }
   }
 
