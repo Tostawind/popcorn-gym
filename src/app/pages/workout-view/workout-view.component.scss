@@ -1,4 +1,9 @@
 :host {
     flex: 1;
     overflow-y: scroll;
+
+    .swiper-pagination-bullet-done {
+        color: var(--green);
+        border: 2px solid var(--green);
+    }
 }

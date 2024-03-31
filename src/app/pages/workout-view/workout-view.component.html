@@ -6,7 +6,8 @@
         <swiper-slide>
             <div style="height: 50px;"></div>
             <app-exercice-card [exercice]="exercice"/>
-            <app-table-sets [exercice]="exercice"/>
+            <!-- Output Exercice Done  -->
+            <app-table-sets [exercice]="exercice" (isAllSetsDone)="exerciceDone($event)"/>
         </swiper-slide>
     }
 </swiper-container>

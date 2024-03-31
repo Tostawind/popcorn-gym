@@ -49,7 +49,7 @@ export class WorkoutViewComponent implements AfterViewInit {
         width: 100%;
         height: 2px;
         background-color: var(--accent);
-    }
+      }
 
       .swiper-pagination-bullet {
         position: relative;
@@ -68,6 +68,7 @@ export class WorkoutViewComponent implements AfterViewInit {
       }
 
       .swiper-pagination-bullet-active {
+        border: 2px solid var(--accent);
         color: var(--secondary);
         background: var(--accent);
       }
@@ -84,6 +85,18 @@ export class WorkoutViewComponent implements AfterViewInit {
       Object.assign(swiperEl, swiperParams);
       swiperEl.initialize();
     }
+  }
+
+  exerciceDone(isExerciceDone: boolean) {
+    const bullet = document.querySelectorAll('.swiper-pagination-bullet');
+    console.log(bullet)
+    // if (isExerciceDone) {
+    //   bullet?.classList.add('swiper-pagination-bullet-done');
+    //   console.log('terminado')
+    // } else {
+    //   bullet?.classList.remove('swiper-pagination-bullet-done');
+    //   console.log('NO terminado')
+    // }
   }
 
 }

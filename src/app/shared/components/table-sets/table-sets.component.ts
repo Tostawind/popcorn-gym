@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import Exercice, { Weight } from '@core/models/exercice.interface';
 import { CountdownService } from '@core/services/countdown.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
@@ -13,6 +13,8 @@ import { ModalService } from '../modal/modal.service';
 })
 export class TableSetsComponent {
   @Input() exercice!: Exercice;
+  @Output() isAllSetsDone = new EventEmitter<boolean>();
+
   countdownService = inject(CountdownService);
   modalService = inject(ModalService);
   sets: boolean[] = [];
@@ -33,6 +35,9 @@ export class TableSetsComponent {
       this.sets[index] = false;
       this.countdownService.stopCountdown();
     }
+
+    const allSelected = this.sets.every((set) => set);
+    this.isAllSetsDone.emit(allSelected);
   }
 
   openWeightsModal(weights: Weight[]) {

@@ -7,8 +7,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--accent);
+    color: var(--white);
     height: var(--footer-height);
     padding: 0 12px;
     overflow: hidden;
@@ -31,9 +31,9 @@
         .footer__btn-add, .footer__btn-subtract {
             height: 31px;
             width: 50px;
-            background-color: var(--secondary);
-            border: 2px solid var(--accent);
-            color: var(--accent);
+            background-color: var(--white);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
             font-weight: bold;
             font-size: 12px;
             padding-right: 2px;
@@ -49,8 +49,8 @@
         
         .footer__btn-stop {
             width: 60%;
-            background-color: var(--accent);
-            border: 2px solid var(--accent);
+            background-color: var(--white);
+            border: 2px solid var(--secondary);
             color: var(--secondary);
             padding: 6px 8px;
             font-weight: bold;
