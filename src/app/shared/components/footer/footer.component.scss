@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--accent);
+    background-color: var(--secondary);
     color: var(--white);
     height: var(--footer-height);
     padding: 0 12px;
@@ -28,33 +28,47 @@
         justify-content: center;
         width: 35%;
 
-        .footer__btn-add, .footer__btn-subtract {
-            height: 31px;
-            width: 50px;
-            background-color: var(--white);
-            border: 2px solid var(--secondary);
+        .footer__btn {
+            background-color: var(--accent);
+            border: 2px solid var(--black);
             color: var(--secondary);
             font-weight: bold;
-            font-size: 12px;
-            padding-right: 2px;
+            transition: all 300ms ease;
+
+            &:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            &--add, &--subtract {
+                height: 31px;
+                width: 50px;
+                background-color: var(--white);
+                border: 2px solid var(--black);
+                color: var(--black);
+                font-weight: bold;
+                font-size: 12px;
+                padding-right: 2px;
+            }
+    
+            &--add {
+                border-radius: 0 4px 4px 0;
+                border-left-width: 1px;
+                transform-origin: left;
+            }
+    
+            &--subtract {
+                border-radius: 4px 0 0 4px;
+                border-right-width: 1px;
+                transform-origin: right;
+            }
+            
+            &--stop {
+                width: 60%;
+                padding: 6px 8px;
+                border-radius: 4px;
+            }
         }
 
-        .footer__btn-add {
-            border-radius: 0 4px 4px 0;
-        }
-
-        .footer__btn-subtract {
-            border-radius: 4px 0 0 4px;
-        }
-        
-        .footer__btn-stop {
-            width: 60%;
-            background-color: var(--white);
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            padding: 6px 8px;
-            font-weight: bold;
-            border-radius: 4px;
-        }
     }
 }
