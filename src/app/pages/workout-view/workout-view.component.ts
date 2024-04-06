@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 import { ExerciceCardComponent } from '@shared/components/exercice-card/exercice-card.component';
 import { TableSetsComponent } from '@shared/components/table-sets/table-sets.component';
@@ -6,6 +6,9 @@ import { CountdownComponent } from '@shared/components/countdown/countdown.compo
 
 import { RoutinesService } from '@core/services/routines.service';
 import { register } from 'swiper/element/bundle';
+import Routine from '@core/models/routine.interface';
+import Exercice from '@core/models/exercice.interface';
+import { ActivatedRoute } from '@angular/router';
 register();
 
 @Component({
@@ -16,10 +19,20 @@ register();
   styleUrl: './workout-view.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class WorkoutViewComponent implements AfterViewInit {
+export class WorkoutViewComponent implements OnInit, AfterViewInit {
   routinesService = inject(RoutinesService);
-  routineName = this.routinesService.getRoutine().name;
-  exercices = this.routinesService.getExercices();
+  route = inject(ActivatedRoute);
+
+  routineName: string | undefined;
+  exercices: Exercice[] | undefined;
+
+  routineId: string = '';
+
+  ngOnInit(): void {
+    this.routineId = this.route.snapshot.paramMap.get('workoutId') || '';
+    this.routineName = this.routinesService.getRoutineById(this.routineId)?.name;
+    this.exercices = this.routinesService.getExercices(this.routineId);
+  }
 
   ngAfterViewInit() {
     const swiperEl = document.querySelector('swiper-container');

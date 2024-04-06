@@ -1,0 +1,33 @@
+.workouts {
+    list-style: none;
+    
+    li {
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid var(--white);
+        background-color: var(--secondary);
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 400ms ease;
+
+        &:active {
+            background-color: var(--black);
+            transform: scale(0.95);
+        }
+
+        .workouts__number {
+            position: relative;
+            display: inline-block;
+            opacity: 0.4;
+            transform: scale(1.5);
+        }
+    }
+}

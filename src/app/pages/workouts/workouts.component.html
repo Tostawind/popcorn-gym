@@ -1,0 +1,12 @@
+<h2 class="title-1" style="margin-bottom: 20px;">Rutinas</h2>
+
+<ul class="workouts">
+    @for (routine of routines; track $index) {
+        <li>
+            <a routerLink="/workout/{{routine.id }}">
+                <span class="workouts__number">#{{$index}}</span>
+                {{routine.name}}
+            </a>
+        </li>
+    }
+</ul>

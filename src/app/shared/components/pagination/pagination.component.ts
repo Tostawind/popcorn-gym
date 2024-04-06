@@ -11,5 +11,5 @@ import { RoutinesService }  from '@core/services/routines.service';
 })
 export class PaginationComponent {
   routinesService = inject(RoutinesService);
-  exercices = this.routinesService.getExercices();
+  exercices = this.routinesService.getExercices('r1234');
 }

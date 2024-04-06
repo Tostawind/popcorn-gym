@@ -6,29 +6,29 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  private isModalOpenSubject = new Subject<boolean>();
-  isModalOpen$= this.isModalOpenSubject.asObservable();
+  private _isModalOpenSubject = new Subject<boolean>();
+  isModalOpen$= this._isModalOpenSubject.asObservable();
 
-  private weightsSelectedSubject = new Subject<Weight[]>();
-  weightsSelected$ = this.weightsSelectedSubject.asObservable();
+  private _weightsSelectedSubject = new Subject<Weight[]>();
+  weightsSelected$ = this._weightsSelectedSubject.asObservable();
 
-  private imageSelectedSubject = new Subject<string>();
-  imageSelected$ = this.imageSelectedSubject.asObservable();
+  private _imageSelectedSubject = new Subject<string>();
+  imageSelected$ = this._imageSelectedSubject.asObservable();
 
   constructor() { }
 
   openModal(weights: Weight[]) {
-    this.isModalOpenSubject.next(true);
-    this.imageSelectedSubject.next('');
-    this.weightsSelectedSubject.next(weights);
+    this._isModalOpenSubject.next(true);
+    this._imageSelectedSubject.next('');
+    this._weightsSelectedSubject.next(weights);
   }
 
   openImageModal(image: string) {
-    this.isModalOpenSubject.next(true);
-    this.imageSelectedSubject.next(image);
+    this._isModalOpenSubject.next(true);
+    this._imageSelectedSubject.next(image);
   }
 
   closeModal() {
-    this.isModalOpenSubject.next(false);
+    this._isModalOpenSubject.next(false);
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { routine } from '../../data/workouts';
+import { routines } from '../../data/workouts';
 import Routine from '../models/routine.interface';
 import Exercice from '../models/exercice.interface';
 
@@ -10,15 +10,23 @@ export class RoutinesService {
 
   constructor() { }
 
-  getRoutine(): Routine {
-    return routine;
+  getRoutines(): Routine[] {
+    return routines;
+  }
+
+  getRoutineById(id: string): Routine | undefined {
+    return routines.find(routine => routine.id === id);
   }
   
-  getTotalExercices(): number {
+  getTotalExercices(id: string): number {
+    const routine = routines.find(routine => routine.id === id);
+    if (!routine) return 0;
     return routine.exercises.length;
   }
 
-  getExercices(): Exercice[] {
+  getExercices(id: string): Exercice[] {
+    const routine = routines.find(routine => routine.id === id);
+    if (!routine) return [];
     return routine.exercises;
   }
 }
