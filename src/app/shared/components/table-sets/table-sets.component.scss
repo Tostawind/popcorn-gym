@@ -65,7 +65,27 @@
     }
 
     &__checkbox {
+        position: relative;
+        appearance: none;
+        font: inherit;
+        color: currentColor;
         height: 20px;
         aspect-ratio: 1;
+        border: 2px solid currentColor;
+        border-radius: 20px;
+
+        &::before {
+            content: url(../../../../assets/icons/check.svg);
+            position: absolute;
+            top: -5px;
+            left: -2px;
+            transform: scale(0);
+            background-color: transparent;
+            transition: all 400ms ease;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
     }
 }
