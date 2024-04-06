@@ -13,10 +13,12 @@ export class ModalComponent {
   modalService = inject(ModalService);
   isModalOpen:boolean = false;
   weightsSelected: Weight[] = [];
+  imageSelected: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    // TODO: Only subscribe once
     this.modalService.isModalOpen$.subscribe((isOpen) => {
       this.isModalOpen = isOpen;
     })
@@ -24,6 +26,12 @@ export class ModalComponent {
     this.modalService.weightsSelected$.subscribe((weights) => {
       this.weightsSelected = weights;
     })
+
+    this.modalService.imageSelected$.subscribe((image) => {
+      this.imageSelected = image;
+    })
+
+
   }
 
   closeModal() {

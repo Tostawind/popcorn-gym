@@ -1,5 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import Exercice from '@core/models/exercice.interface';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-exercice-card',
@@ -10,5 +11,9 @@ import Exercice from '@core/models/exercice.interface';
 })
 export class ExerciceCardComponent {
   @Input() exercice!: Exercice;
+  modalService = inject(ModalService);
 
+  imageZoom(image: string) {
+    this.modalService.openImageModal(image);
+  }
 }

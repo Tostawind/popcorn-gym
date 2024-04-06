@@ -1,12 +1,16 @@
 @if(isModalOpen) {
     <div class="modal" >
         <div class="modal__content">
-            <h2>Peso</h2>
-            @for (weight of weightsSelected; track $index) {
-                <div class="modal__weight">
-                    <h3>{{weight.equipment}}: {{weight.kg}} kg</h3>
-                    <p>Notas: {{weight.notes}}</p>
-                </div>
+            @if(imageSelected) {
+                <img [src]="imageSelected" class="modal__image" alt="Exercice image">
+            } @else {
+                <h2>Peso</h2>
+                @for (weight of weightsSelected; track $index) {
+                    <div class="modal__weight">
+                        <h3>{{weight.equipment}}: {{weight.kg}} kg</h3>
+                        <p>Notas: {{weight.notes}}</p>
+                    </div>
+                }
             }
             <button (click)="modalService.closeModal()" >CERRAR</button>
         </div>

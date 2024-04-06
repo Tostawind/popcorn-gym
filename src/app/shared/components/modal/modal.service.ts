@@ -12,11 +12,20 @@ export class ModalService {
   private weightsSelectedSubject = new Subject<Weight[]>();
   weightsSelected$ = this.weightsSelectedSubject.asObservable();
 
+  private imageSelectedSubject = new Subject<string>();
+  imageSelected$ = this.imageSelectedSubject.asObservable();
+
   constructor() { }
 
   openModal(weights: Weight[]) {
     this.isModalOpenSubject.next(true);
+    this.imageSelectedSubject.next('');
     this.weightsSelectedSubject.next(weights);
+  }
+
+  openImageModal(image: string) {
+    this.isModalOpenSubject.next(true);
+    this.imageSelectedSubject.next(image);
   }
 
   closeModal() {

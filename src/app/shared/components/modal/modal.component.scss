@@ -4,15 +4,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
     display: grid;
     place-items: center;
     z-index: 100;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
 
     &__content {
         background-color: var(--white);
         color: var(--black);
         padding: 20px;
+        border-radius: 4px;
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: contain;
         border-radius: 4px;
     }
     

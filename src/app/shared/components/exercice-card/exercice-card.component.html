@@ -2,7 +2,7 @@
     <div class="exercice">
         <h4 class="title-2">{{ exercice.name }}</h4>
         <div class="exercice__content">
-            <img class="exercice__image" [src]="exercice.image" alt="Random image">
+            <img class="exercice__image" [src]="exercice.image" alt="Random image" (click)="imageZoom(exercice.image)">
             <div class="exercice__info">
                 <p class="exercice__rest">
                     <b>Rest: </b>
