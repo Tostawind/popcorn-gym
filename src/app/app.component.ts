@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ModalComponent } from '@shared/components/modal/modal.component';
+import { DeviceService } from '@core/services/device.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,12 @@ import { ModalComponent } from '@shared/components/modal/modal.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'popcorn-gym';
+export class AppComponent implements OnInit {
+  deviceService = inject(DeviceService);
+  isDesktop!: boolean;
+
+  ngOnInit(): void {
+    this.isDesktop = this.deviceService.isDesktop();
+    console.log(this.isDesktop);
+  }
 }

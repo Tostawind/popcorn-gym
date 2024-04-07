@@ -22,7 +22,8 @@
 
 html {
     font-family: system-ui, sans-serif;
-    background: var(--black);
+    background: rgb(36,41,62);
+    background: linear-gradient(90deg, rgba(36,41,62,1) 0%, rgba(47,56,85,1) 50%, rgba(36,41,62,1) 100%);
 }
 
 body {
