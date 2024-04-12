@@ -1,12 +1,10 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
-import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 import { ExerciceCardComponent } from '@shared/components/exercice-card/exercice-card.component';
 import { TableSetsComponent } from '@shared/components/table-sets/table-sets.component';
 import { CountdownComponent } from '@shared/components/countdown/countdown.component';
 
 import { RoutinesService } from '@core/services/routines.service';
 import { register } from 'swiper/element/bundle';
-import Routine from '@core/models/routine.interface';
 import Exercice from '@core/models/exercice.interface';
 import { ActivatedRoute } from '@angular/router';
 register();
@@ -14,7 +12,7 @@ register();
 @Component({
   selector: 'app-workout-view',
   standalone: true,
-  imports: [PaginationComponent, ExerciceCardComponent, TableSetsComponent, CountdownComponent],
+  imports: [ExerciceCardComponent, TableSetsComponent, CountdownComponent],
   templateUrl: './workout-view.component.html',
   styleUrl: './workout-view.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -30,8 +28,10 @@ export class WorkoutViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.routineId = this.route.snapshot.paramMap.get('workoutId') || '';
-    this.routineName = this.routinesService.getRoutineById(this.routineId)?.name;
-    this.exercices = this.routinesService.getExercices(this.routineId);
+    this.routinesService.getRoutineById(this.routineId).subscribe((routine) => {
+      this.routineName = routine.name;
+      this.exercices = routine.exercises;
+    });
   }
 
   ngAfterViewInit() {

@@ -1,7 +1,0 @@
-<div class="pagination">
-  @for(exercice of exercices; track $index) {
-  <div class="pagination__item" [ngClass]="{ 'pagination__item--active': $index === 0 }">
-    <span class="pagination__number">{{ $index + 1 }}</span>
-  </div>
-  }
-</div>
