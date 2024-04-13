@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class DeviceService {
 
   constructor() { 
-    console.log('__DEVICE SERVICE__');
   }
 
   isDesktop(): boolean {

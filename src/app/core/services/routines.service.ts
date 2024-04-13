@@ -10,7 +10,7 @@ import { Observable, map, of } from 'rxjs';
 })
 export class RoutinesService {
   private _http = inject(HttpClient);
-  private _API_URL: string = 'http://localhost:3000/api/workouts';
+  private _API_URL: string = 'http://localhost:9000/api/workouts';
   private _isMock: boolean = false;
 
   public workouts: Routine[] = [];

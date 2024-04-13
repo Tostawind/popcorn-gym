@@ -41,3 +41,25 @@ body {
 .title-3 {
     font-size: 18px;
 }
+
+
+/* __BUTTON__ */
+.btn {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 400ms ease;
+
+    &:hover {
+        transform: scale(0.95);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}

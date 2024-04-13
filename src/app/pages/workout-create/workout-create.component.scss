@@ -1,0 +1,36 @@
+.input {
+    display: block;
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 400ms ease;
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent);
+        transform: scale(1.02);
+    }
+
+    &::placeholder {
+        color: var(--white);
+        opacity: 0.4;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+    }
+}
+
+.exercice {
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}

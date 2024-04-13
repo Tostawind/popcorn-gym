@@ -18,6 +18,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.isDesktop = this.deviceService.isDesktop();
-    console.log(this.isDesktop);
   }
 }
