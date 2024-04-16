@@ -4,13 +4,14 @@ import Routine from '../models/routine.interface';
 import Exercice from '../models/exercice.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, of } from 'rxjs';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoutinesService {
   private _http = inject(HttpClient);
-  private _API_URL: string = 'http://localhost:9000/api/workouts';
+  private _API_URL: string = environment.baseUrl + environment.workouts;
   private _isMock: boolean = false;
 
   public workouts: Routine[] = [];
