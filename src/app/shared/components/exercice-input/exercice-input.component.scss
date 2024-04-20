@@ -1,0 +1,105 @@
+.dropdown {
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 10px 12px 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+    &--closed {
+        height: 40px;
+        overflow: hidden;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        height: 40px;
+    }
+
+    &__number {
+        opacity: 0.6;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__image {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 100px;
+        aspect-ratio: 1;
+        background-color: #22222290;
+        border: 1px solid var(--white);
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        overflow: hidden;
+        transition: opacity 400ms ease;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+
+        // Avoid the image to be clickable
+        &::after {
+            content: '';
+            background-color: transparent;
+            position: absolute;
+            inset: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .image__input {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        // backdrop-filter: blur(20px);
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform 600ms ease;
+
+        &--open {
+            transform: scaleY(1);
+        }
+
+        mat-form-field {
+            height: auto;
+            width: 80%;
+        }
+    }
+
+    /* MATERIAL INPUT */
+    mat-form-field {
+        width: 100%;
+        height: 100%;
+
+        .mdc-text-field--filled  {
+            background-color: red !important;
+        }
+
+        input {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}
