@@ -11,5 +11,9 @@ import { ExerciceInputComponent } from '@shared/components/exercice-input/exerci
 })
 export class WorkoutCreateComponent {
   workout: Routine | null = null;
-  exercices = [1,2];
+  exercices = [1];
+
+  addExercice() {
+    this.exercices.push(this.exercices.length + 1);
+  }
 }

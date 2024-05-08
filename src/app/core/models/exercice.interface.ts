@@ -1,5 +1,5 @@
 export default interface Exercice     {
-    id: string;
+    _id: string;
     position: number;
     name: string;
     sets: number;

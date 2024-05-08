@@ -7,7 +7,7 @@ export const routines: Routine[] = [
         name: 'Tirón',
         exercises: [
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 1,
                 name: 'Remo en barra libre',
                 sets: 3,
@@ -29,7 +29,7 @@ export const routines: Routine[] = [
                 image: 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Row_4beb1d94-bac9-4538-9578-2d9cf93ef008_600x600.png?v=1612138201'
             },
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 2,
                 name: 'Jalón una mano',
                 sets: 2,
@@ -46,7 +46,7 @@ export const routines: Routine[] = [
                 image: 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Deadlift_600x600.png?v=1619977112'
             },
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 3,
                 name: 'Remo máquina placas',
                 sets: 3,
@@ -70,7 +70,7 @@ export const routines: Routine[] = [
         name: 'Empuje',
         exercises: [
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 1,
                 name: 'Remo en barra libre',
                 sets: 3,
@@ -92,7 +92,7 @@ export const routines: Routine[] = [
                 image: 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Row_4beb1d94-bac9-4538-9578-2d9cf93ef008_600x600.png?v=1612138201'
             },
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 2,
                 name: 'Jalón una mano',
                 sets: 2,
@@ -109,7 +109,7 @@ export const routines: Routine[] = [
                 image: 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Deadlift_600x600.png?v=1619977112'
             },
             {
-                id: crypto.randomUUID(),
+                _id: crypto.randomUUID(),
                 position: 3,
                 name: 'Remo máquina placas',
                 sets: 3,

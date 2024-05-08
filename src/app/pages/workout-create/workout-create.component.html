@@ -4,11 +4,11 @@
 
 <hr />
 
-@for (exercice of exercices; track $index) {
-  <app-exercice-input [index]="$index"/>
+@for (exercice of exercices; track $index; let isLast = $last) {
+  <app-exercice-input [index]="$index" [isDropwdownOpen]="isLast"/>
 }
 
 <!-- ADD EXERCICE -->
-<button class="btn btn--add" style="width: 100%; margin-top: 10px">
+<button class="btn btn--add" style="width: 100%; margin-top: 10px" (click)="addExercice()">
   Añadir ejercicio
 </button>

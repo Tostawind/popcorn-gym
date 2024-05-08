@@ -1,5 +1,5 @@
-<form [formGroup]="exerciceForm" class="dropdown" (ngSubmit)="onSubmit()">
-    <div class="dropdown__header" (click)="openDropdown($event)">
+<form [formGroup]="exerciceForm" class="dropdown" [ngClass]="{'dropdown--closed': !isDropwdownOpen}" (ngSubmit)="onSubmit()">
+    <div class="dropdown__header" (click)="toggleDropdown($event)">
       <span class="dropdown__number">#{{ index < 9 ? '0' : ''}}{{ index + 1}}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,14 +30,7 @@
 
         <button class="btn" (click)="closeImageInput($event)">Añadir</button>
       </div>
-  
-      <!-- <input 
-        class="input" 
-        type="text" 
-        placeholder="Ejercicio" 
-        formControlName="name"
-        (blur)="onInputBlur($event)"
-      /> -->
+
       <mat-form-field>
         <mat-label>Ejercicio</mat-label>
         <input matInput type="string" formControlName="name" (blur)="onInputBlur($event)"/>
@@ -62,10 +55,6 @@
         <mat-label>Rest</mat-label>
         <input matInput type="number" formControlName="rest" (blur)="onInputBlur($event)"/>
       </mat-form-field>
-      <!-- <input class="input" type="number" placeholder="Sets" formControlName="sets" (blur)="onInputBlur($event)"/> -->
-      <!-- <input class="input" type="number" placeholder="Reps" formControlName="reps" (blur)="onInputBlur($event)"/>
-      <input class="input" type="number" placeholder="Peso" formControlName="weights" (blur)="onInputBlur($event)"/>
-      <input class="input" type="number" placeholder="Rest" formControlName="rest" (blur)="onInputBlur($event)"/> -->
     </div>
   
     <!-- NOTES -->
@@ -73,5 +62,4 @@
       <mat-label>Notas</mat-label>
       <textarea  matInput style="resize: none" formControlName="notes" (blur)="onInputBlur($event)"></textarea>
     </mat-form-field>
-    <!-- <textarea  class="input" placeholder="Notas" style="resize: none" formControlName="notes" (blur)="onInputBlur($event)"></textarea> -->
   </form>

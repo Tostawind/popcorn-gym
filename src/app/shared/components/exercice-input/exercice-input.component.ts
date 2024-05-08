@@ -1,17 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NewWorkoutService } from '@core/services/new-workout.service';
 
 @Component({
   selector: 'app-exercice-input',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, MatFormFieldModule, MatInputModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './exercice-input.component.html',
   styleUrl: './exercice-input.component.scss'
 })
 export class ExerciceInputComponent implements OnInit {
+  private _newWorkoutService: NewWorkoutService = inject(NewWorkoutService);
+
   @Input() index = 0;
+  @Input() isDropwdownOpen = true;
+
   exerciceForm!: FormGroup;
   imageUrl: string = '../../../assets/img/imageNotFound.jpg';
   // https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Barbell-Bent-Over-Rows-Supinated-Grip_600x600.png?v=1619977891
@@ -20,16 +26,16 @@ export class ExerciceInputComponent implements OnInit {
     this.exerciceForm = new FormGroup({
       position: new FormControl(this.index, [Validators.required]),
       name: new FormControl('', [Validators.required]),
-      sets: new FormControl(0, [Validators.required]),
-      reps: new FormControl(0, [Validators.required]),
-      rest: new FormControl('0', [Validators.required]),
+      sets: new FormControl('', [Validators.required]),
+      reps: new FormControl('', [Validators.required]),
+      rest: new FormControl(0, [Validators.required]),
       notes: new FormControl(''),
-      image: new FormControl(''),
+      image: new FormControl('', [Validators.required]),
       weight: new FormControl(0, [Validators.required])
     });
   }
 
-  openDropdown(event: any) {
+  toggleDropdown(event: any) {
     event.stopPropagation();
   
     const dropdown = event.target.closest('.dropdown');
@@ -40,7 +46,7 @@ export class ExerciceInputComponent implements OnInit {
   onInputBlur(event: any) {
     console.log('Se ha perdido el foco del campo de entrada:', event.target.value);
     if (this.exerciceForm.valid) {
-      this.onSubmit();
+      this._newWorkoutService.addExercice(this.exerciceForm.value);
     }
   }
 
@@ -52,11 +58,18 @@ export class ExerciceInputComponent implements OnInit {
   closeImageInput(event: any) {
     const imageInput = event.target.closest('.image__input');
     imageInput?.classList.remove('image__input--open');
+
+
+    // If input it's not empty, set the image URL:
     if (this.exerciceForm.value['image'] !== '') {
       this.imageUrl = this.exerciceForm.value['image'];
+
+      if (this.exerciceForm.valid) {
+        this._newWorkoutService.addExercice(this.exerciceForm.value);
+      }
     }
-      
   }
+
 
   onSubmit() {
     if (this.exerciceForm.valid) {
