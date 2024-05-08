@@ -12,7 +12,7 @@ import { environment } from '@environments/environment';
 export class RoutinesService {
   private _http = inject(HttpClient);
   private _API_URL: string = environment.baseUrl + environment.workouts;
-  private _isMock: boolean = false;
+  private _isMock: boolean = true;
 
   public workouts: Routine[] = [];
 

@@ -2,8 +2,8 @@ import Routine from '../core/models/routine.interface';
 
 export const routines: Routine[] = [
     {
-        // id: crypto.randomUUID(),
-        _id: 'r1234',
+        // _id: 'r1234',
+        _id: crypto.randomUUID(),
         name: 'Tirón',
         exercises: [
             {

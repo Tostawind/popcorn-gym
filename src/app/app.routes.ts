@@ -9,10 +9,11 @@ export const routes: Routes = [
         path: '',
         component: WorkoutsComponent
     },
-    {
-        path: 'workout/new',
-        component: WorkoutCreateComponent
-    },
+    // TODO: It's not finish:
+    // {
+    //     path: 'workout/new',
+    //     component: WorkoutCreateComponent
+    // },
     {
         path: 'workout/:workoutId',
         component: WorkoutViewComponent
